@@ -490,7 +490,7 @@
                   title="入账卡号"
                   placeholder="入账卡号"
                   style="width: 60%"
-                  :maxlength="18"
+                  :maxlength="19"
                 ></Input>
               </FormItem>
             </Col>
@@ -845,7 +845,7 @@ export default class FuYou extends AbpBase {
     ],
     acnt_no: [
       { required: true, message: "入账卡号不能为空", trigger: 'blur' },
-      { type: 'string', min: 18, message: '入账卡号长度不能小于18', trigger: 'blur' }
+      { type: 'string', min: 19, message: '入账卡号长度不能小于19', trigger: 'blur' }
       
     ],
     door_face: [

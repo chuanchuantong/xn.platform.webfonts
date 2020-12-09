@@ -49,6 +49,14 @@ export const paymentRouter: Router = {
     },
     component: () => import('@/views/setting/payment/fuyou/index.vue')
 };
+export const wxauthquery: Router = {
+    path: '/wxauthquery',
+    name: 'wxauthquery',
+    meta: {
+        title: 'WxAuthQuery'
+    },
+    component: () => import('@/views/setting/payment/wxauthquery/index.vue')
+};
 export const otherRouters: Router = {
     path: '/main',
     name: 'main',
@@ -103,5 +111,6 @@ export const routers = [
     ...appRouters,
     otherRouters, 
     homeRouter,
-    paymentRouter 
+    paymentRouter,
+    // wxauthquery 
 ];

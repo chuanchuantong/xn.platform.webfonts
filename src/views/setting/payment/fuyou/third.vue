@@ -108,14 +108,16 @@ export default class FuYou extends AbpBase {
             closable: true,
           });
           localStorage.setItem("submitSuccessState", "true");
+          this.subState=true;
         } else {
           this.$Message.error({
             content: "附件已提交失败，请稍后刷新页面重试!",
             duration: 5,
             closable: true,
           });
+          this.subState=false;
         }
-        this.subState=true;
+        
         (this.$Spin as any).hide();
       })
       .then(() => {

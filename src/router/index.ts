@@ -28,7 +28,7 @@ router.beforeEach((to, from, next) => {
     }
     else {
         //判断将要跳转的路径是不是要去富有支付  如果是的话 直接跳转
-        if (to.name === 'fuyoupay') {
+        if (to.name === 'fuyoupay' || to.name=== 'wxauthquery') {
             Util.toDefaultPage([...routers], to.name, router, next);
         }
         else
@@ -60,7 +60,7 @@ router.beforeEach((to, from, next) => {
     }
 });
 router.afterEach((to) => {
-    if (to.name !== 'fuyoupay')
+    if (to.name !== 'fuyoupay' && to.name!== 'wxauthquery')
         Util.openNewPage(router.app, to.name, to.params, to.query);
     iView.LoadingBar.finish();
     window.scrollTo(0, 0);
