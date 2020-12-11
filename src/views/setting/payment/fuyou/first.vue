@@ -784,10 +784,10 @@ export default class FuYou extends AbpBase {
     th_flag:1,//退货标识(0：不能退货，1：可以退货)
     wx_busi_flag:0,//微信业务标识(0：微信一般类)
     wx_flag:1,
-    wx_set_cd:"M0000",
+    wx_set_cd:"M0215",
     ali_flag:1,
-    ali_set_cd:"M0000",
-    settle_tp_cd:"M0000",
+    ali_set_cd:"M0215",
+    settle_tp_cd:"M0215",
     qpay_flag:0,
     jdpay_flag:0,
     has_reserve_acnt:0
