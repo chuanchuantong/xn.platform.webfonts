@@ -382,6 +382,22 @@
               </FormItem>
             </Col>
             <Col span="12">
+              <FormItem label="联系人身份证号" prop="contact_cert_no">
+                <Input
+                  v-model="formValidate.contact_cert_no"
+                  title="联系人身份证号"
+                  placeholder="联系人身份证号"
+                  style="width: 60%"
+                  :maxlength="18"
+                ></Input>
+              </FormItem>
+            </Col>
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
+            <Col span="12">
               <FormItem label="客服电话" prop="contact_phone">
                 <Input
                   v-model="formValidate.contact_phone"
@@ -392,11 +408,6 @@
                 ></Input>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
             <Col span="12">
               <FormItem label="商户经营地" prop="contact_addr" >
                 <Cascader
@@ -411,6 +422,12 @@
                 ></Cascader>
               </FormItem>
             </Col>
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="联系电话" prop="contact_mobile">
                 <Input
@@ -422,11 +439,6 @@
                 ></Input>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
             <Col span="12">
               <FormItem label="联系邮箱" prop="contact_email">
                 <Input
@@ -438,6 +450,11 @@
                 ></Input>
               </FormItem>
             </Col>
+            
+          </Row>
+        </FormItem>
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="入账卡类型" >
                 <Select v-model="formValidate.acnt_type" style="width: 60%" disabled>
@@ -450,10 +467,6 @@
                 </Select>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-        <FormItem>
-          <Row>
             <Col span="12">
               <FormItem label="行别" prop="bank_type">
                 <Select v-model="formValidate.bank_type" style="width: 60%" :label-in-value="true" @on-change="bankChange">
@@ -465,6 +478,12 @@
                 </Select>
               </FormItem>
             </Col>
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="入账卡开户行名称" prop="inter_bank_no">
                 <Select v-model="formValidate.inter_bank_no" placeholder="请选择  如没有对应的支行，请选择地区内的支行，先提交" filterable clearable style="width: 60%" :label-in-value="true" @on-change="bankDictChange" not-found-text="请先选择商户经营地或行别">
@@ -477,12 +496,6 @@
                 
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
-            
             <Col span="12">
               <FormItem label="入账卡号" prop="acnt_no">
                 <Input
@@ -494,6 +507,11 @@
                 ></Input>
               </FormItem>
             </Col>
+            
+          </Row>
+        </FormItem>
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="清算类型">
                 <Select v-model="formValidate.settle_tp" disabled style="width: 60%">
@@ -506,11 +524,6 @@
                 </Select>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-        <FormItem>
-          <Row>
-            
             <Col span="12">
               <FormItem label="法人姓名" prop="artif_nm">
                 <Input
@@ -522,6 +535,12 @@
                 ></Input>
               </FormItem>
             </Col>
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="法人入账标识">
                 <Select
@@ -538,12 +557,6 @@
                 </Select>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
-            
             <Col span="12">
               <FormItem label="入账证件类型">
                 <Select
@@ -560,6 +573,12 @@
                 </Select>
               </FormItem>
             </Col>
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="入账证件号" prop="acnt_certif_id">
                 <Input
@@ -571,12 +590,6 @@
                 ></Input>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
-            
             <Col span="12">
               <FormItem label="入账证件到期日" prop="acnt_certif_expire_dt">
                 <Input
@@ -588,6 +601,12 @@
                 ></Input>
               </FormItem>
             </Col>
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="入账银行卡正面照片" prop="entry_bank_positive">
                 <div
@@ -646,12 +665,6 @@
                 </Modal>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
-            
             <Col span="12">
               <FormItem label="手持证件照片" prop="hand_id">
                 <div
@@ -755,6 +768,7 @@ export default class FuYou extends AbpBase {
     certif_id: "", //法人身份证号
     certif_id_expire_dt: "", //法人身份证到期日
     contact_person: "", //联系人姓名
+    contact_cert_no:"",//联系人身份证号
     contact_phone: "", //客服电话，必须纯数字。推荐 400开头电话或11位有效手机号
     contact_addr: "", //商户经营地联系地址
     contact_mobile: "", //联系电话
@@ -923,6 +937,10 @@ export default class FuYou extends AbpBase {
     ],
     contact_person: [
       { required: true, message: "联系人姓名不能为空", trigger: 'blur' },
+    ],
+    contact_cert_no: [
+      { required: true, message: "联系人身份证号不能为空", trigger: 'blur' },
+      { type: 'string', min: 18, message: '联系人身份证号长度不能小于18', trigger: 'blur' }
     ],
     certif_id_expire_dt: [
       { required: true, message: "法人身份证到期日不能为空", trigger: 'blur' },
