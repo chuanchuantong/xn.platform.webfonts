@@ -830,7 +830,7 @@ export default class FuYou extends AbpBase {
     wx_set_cd:"M0215",
     ali_flag:1,
     ali_set_cd:"M0215",
-    settle_tp_cd:"M0215",
+    settle_tp_cd:"M0000",
     qpay_flag:0,
     jdpay_flag:0,
     has_reserve_acnt:0
