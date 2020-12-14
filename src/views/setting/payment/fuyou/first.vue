@@ -223,6 +223,17 @@
         <FormItem>
           <Row>
             <Col span="12">
+              <FormItem label="法人姓名" prop="artif_nm">
+                <Input
+                  v-model="formValidate.artif_nm"
+                  title="法人姓名"
+                  placeholder="法人姓名"
+                  style="width: 60%"
+                  :maxlength="15"
+                ></Input>
+              </FormItem>
+            </Col>
+            <Col span="12">
               <FormItem label="法人身份证号" prop="certif_id">
                 <Input
                   v-model="formValidate.certif_id"
@@ -230,6 +241,24 @@
                   placeholder="法人身份证号"
                   style="width: 60%"
                   :maxlength="18"
+                ></Input>
+              </FormItem>
+            </Col>
+             
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
+            <Col span="12">
+              <FormItem label="法人身份证开始时间" prop="card_start_dt">
+                <Input
+                  v-model="formValidate.card_start_dt"
+                  :maxlength="8"
+                  title="法人身份证开始时间（格式例：2020年01月01日 输入20200101）"
+                  placeholder="法人身份证开始时间（格式例：2020年01月01日 输入20200101）"
+                  style="width: 60%"
                 ></Input>
               </FormItem>
             </Col>
@@ -246,6 +275,7 @@
             </Col>
           </Row>
         </FormItem>
+
 
         <FormItem>
           <Row>
@@ -382,6 +412,24 @@
               </FormItem>
             </Col>
             <Col span="12">
+              <FormItem label="联系电话" prop="contact_mobile">
+                <Input
+                  v-model="formValidate.contact_mobile"
+                  title="联系电话"
+                  placeholder="联系电话"
+                  style="width: 60%"
+                  :maxlength="11"
+                ></Input>
+              </FormItem>
+            </Col>
+            
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
+            <Col span="12">
               <FormItem label="联系人身份证号" prop="contact_cert_no">
                 <Input
                   v-model="formValidate.contact_cert_no"
@@ -392,11 +440,6 @@
                 ></Input>
               </FormItem>
             </Col>
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
             <Col span="12">
               <FormItem label="客服电话" prop="contact_phone">
                 <Input
@@ -405,6 +448,25 @@
                   placeholder="客服电话，必须纯数字。推荐 400开头电话或11位有效手机号"
                   style="width: 60%"
                   :maxlength="15"
+                ></Input>
+              </FormItem>
+            </Col>
+            
+            
+          </Row>
+        </FormItem>
+
+        
+        <FormItem>
+          <Row>
+            <Col span="12">
+              <FormItem label="联系邮箱" prop="contact_email">
+                <Input
+                  v-model="formValidate.contact_email"
+                  title="联系邮箱"
+                  placeholder="联系邮箱"
+                  style="width: 60%"
+                  :maxlength="60"
                 ></Input>
               </FormItem>
             </Col>
@@ -423,36 +485,10 @@
               </FormItem>
             </Col>
             
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
-            <Col span="12">
-              <FormItem label="联系电话" prop="contact_mobile">
-                <Input
-                  v-model="formValidate.contact_mobile"
-                  title="联系电话"
-                  placeholder="联系电话"
-                  style="width: 60%"
-                  :maxlength="11"
-                ></Input>
-              </FormItem>
-            </Col>
-            <Col span="12">
-              <FormItem label="联系邮箱" prop="contact_email">
-                <Input
-                  v-model="formValidate.contact_email"
-                  title="联系邮箱"
-                  placeholder="联系邮箱"
-                  style="width: 60%"
-                  :maxlength="60"
-                ></Input>
-              </FormItem>
-            </Col>
             
           </Row>
         </FormItem>
+
         <FormItem>
           <Row>
             <Col span="12">
@@ -479,9 +515,10 @@
               </FormItem>
             </Col>
             
+            
+            
           </Row>
         </FormItem>
-
         <FormItem>
           <Row>
             <Col span="12">
@@ -508,11 +545,14 @@
               </FormItem>
             </Col>
             
+            
+            
           </Row>
         </FormItem>
+
         <FormItem>
           <Row>
-            <Col span="12">
+           <Col span="12">
               <FormItem label="清算类型">
                 <Select v-model="formValidate.settle_tp" disabled style="width: 60%">
                   <Option
@@ -524,23 +564,6 @@
                 </Select>
               </FormItem>
             </Col>
-            <Col span="12">
-              <FormItem label="法人姓名" prop="artif_nm">
-                <Input
-                  v-model="formValidate.artif_nm"
-                  title="法人姓名"
-                  placeholder="法人姓名"
-                  style="width: 60%"
-                  :maxlength="15"
-                ></Input>
-              </FormItem>
-            </Col>
-            
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
             <Col span="12">
               <FormItem label="法人入账标识">
                 <Select
@@ -557,6 +580,13 @@
                 </Select>
               </FormItem>
             </Col>
+            
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="入账证件类型">
                 <Select
@@ -573,12 +603,6 @@
                 </Select>
               </FormItem>
             </Col>
-            
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
             <Col span="12">
               <FormItem label="入账证件号" prop="acnt_certif_id">
                 <Input
@@ -590,6 +614,13 @@
                 ></Input>
               </FormItem>
             </Col>
+
+            
+          </Row>
+        </FormItem>
+
+        <FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="入账证件到期日" prop="acnt_certif_expire_dt">
                 <Input
@@ -601,12 +632,6 @@
                 ></Input>
               </FormItem>
             </Col>
-            
-          </Row>
-        </FormItem>
-
-        <FormItem>
-          <Row>
             <Col span="12">
               <FormItem label="入账银行卡正面照片" prop="entry_bank_positive">
                 <div
@@ -665,6 +690,10 @@
                 </Modal>
               </FormItem>
             </Col>
+          </Row>
+        </FormItem>
+<FormItem>
+          <Row>
             <Col span="12">
               <FormItem label="手持证件照片" prop="hand_id">
                 <div
@@ -722,7 +751,6 @@
             </Col>
           </Row>
         </FormItem>
-
         <FormItem>
           <Row style="text-align:right;top:30px;padding-bottom:30px;right:30px;">
             <Button type="primary" @click="handleSubmit('formValidate')" size="large" style="width:10%">下 一 步</Button>
@@ -787,6 +815,7 @@ export default class FuYou extends AbpBase {
     acnt_artif_flag: "", //法人入账标识
     acnt_certif_tp: "", //入账证件类型
     acnt_certif_id: "", //入账证件号
+    card_start_dt:"",//法人身份证开始时间
     acnt_certif_expire_dt: "", //入账证件到期日（格式 yyyyMMdd）
     sign: "", //签名，详见签名算法
     door_face:-1,//门脸照片
@@ -844,6 +873,10 @@ export default class FuYou extends AbpBase {
     acnt_certif_expire_dt: [
       { required: true, message: "入账证件到期日不能为空", trigger: 'blur' },
       { type: 'string', min: 8, message: '入账证件到期日长度不能小于8', trigger: 'blur' }
+    ],
+    card_start_dt: [
+      { required: true, message: "法人身份证开始时间不能为空", trigger: 'blur' },
+      { type: 'string', min: 8, message: '法人身份证开始时间长度不能小于8', trigger: 'blur' }
     ],
     artif_nm: [
       { required: true, message: "法人名称不能为空", trigger: 'blur' },
